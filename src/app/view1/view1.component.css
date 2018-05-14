@@ -1,0 +1,35 @@
+:root{
+    font-size: 16px;
+}
+.size
+{    
+    display: flex;
+    flex-wrap: wrap; 
+}
+.col-xs-12
+{
+    margin: 3vmax;      
+    /* max-width: 50vmax; */
+    /* min-width: 30vmax; */
+    width: 220px;
+    
+}
+#book
+{
+    border-top: 4px solid #ef3e3e;    
+
+}
+#house
+{
+    border-top: 4px solid #ffc13d;    
+    
+}
+#character
+{
+    border-top: 4px solid #529cb9;    
+    
+}
+h5
+{
+    font-size: 1.5rem;
+}

@@ -1,0 +1,64 @@
+<div class="size" *ngIf="gotData.length>0">
+  <div class="col-xs-12" *ngFor="let ele of gotData">
+    <div id="book" class="card shadow-lg p-3 mb-5 bg-white rounded" *ngIf="ele.isbn">
+      <h3 class="card-title mx-auto">
+        Book
+      </h3>
+      <hr>
+      <div class="card-body mx-auto">
+        <h5 class="card-title">
+          {{ele.name}}
+        </h5>
+        <h6 class="card-text">
+          {{ele.country}}
+        </h6>
+        <hr>
+        <a [routerLink]="['/book',ele.url]" class="btn btn-danger">view</a>
+      </div>
+    </div>
+    <!-- same repeater for house cards -->
+    <div id="house" class="card shadow-lg p-3 mb-5 bg-white rounded" *ngIf="ele.region || ele.coatOfArms">
+      <h3 class="card-title mx-auto">
+        House
+      </h3>
+      <hr>
+      <div class="card-body mx-auto">
+        <h5 class="card-title">
+          {{ele.name}}
+        </h5>
+        <h6 class="card-text">
+          {{ele.region}}
+        </h6>
+        <hr>
+        <a [routerLink]="['/houses',ele.url]" class="btn btn-warning">view</a>
+      </div>
+    </div>
+    <!-- house cards end here -->
+    <!-- character cards starts -->
+    <div id="character" class="card shadow-lg p-3 mb-5 bg-white rounded" *ngIf="ele.gender">
+      <h3 class="card-title mx-auto">
+        Character
+      </h3>
+      <hr>
+      <div class="card-body mx-auto">
+        <h5 class="card-title" *ngIf="ele.name=='' then aliase else name">
+
+        </h5>
+        <ng-template #aliase>
+          <h5 class="card-title"> {{ele.aliases}}</h5>
+        </ng-template>
+
+        <ng-template #name>
+          <h5 class="card-title"> {{ele.name}}</h5>
+        </ng-template>
+
+        <h6 class="card-text">
+          {{ele.gender}}
+        </h6>
+        <hr>
+        <a [routerLink]="['/character',ele.url]" class="btn btn-info">view</a>
+      </div>
+    </div>
+    <!-- character cards ends -->
+  </div>
+</div>

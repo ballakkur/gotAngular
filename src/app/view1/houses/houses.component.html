@@ -1,0 +1,43 @@
+<div class="col-xs-12"  *ngIf ="houseDetails!=undefined">
+  <div class="container">
+    <div class="row">
+      <div>
+        <h5 class="col-md-12">
+          {{houseDetails.name}}
+          <hr>
+        </h5>
+        <div class="col-md-12" *ngIf="houseDetails.region!=''">
+          region:&nbsp;{{houseDetails.region}}
+          <hr>
+        </div>
+        <div class="col-md-12" *ngIf="houseDetails.coatOfArms!=''">
+          coatOfArms:&nbsp;{{houseDetails.coatOfArms}}
+          <hr>
+        </div>
+        <div class="col-md-12" *ngIf="houseDetails.words!=''">
+            words:&nbsp;{{houseDetails.words}}
+            <hr>
+        </div>
+        <div class="col-md-12" *ngIf="houseDetails.titles!=''">
+            title:&nbsp;{{houseDetails.titles}}
+        </div>
+        <hr>
+        <div class="col-md-12" *ngIf="houseDetails.seats!=''">
+            seats:&nbsp;{{houseDetails.seats}}
+            <hr>
+        </div>
+        <div class="col-md-12" *ngIf="houseDetails.founded!=''">
+          founded:&nbsp;{{houseDetails.founded}}
+          <hr>
+        </div>
+        <div class="col-md-12" *ngIf="houseDetails.diedOut!=''">
+          diedOut:&nbsp;{{houseDetails.diedOut}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <button (click)="getBack()" class="btn btn-success">
+      back
+    </button>
+</div>
